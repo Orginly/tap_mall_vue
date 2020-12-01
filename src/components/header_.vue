@@ -2,7 +2,7 @@
  * @Author: Orginly
  * @Date: 2020-11-25 13:59:01
  * @LastEditors: Orginly
- * @LastEditTime: 2020-11-26 16:21:17
+ * @LastEditTime: 2020-12-01 16:18:42
 -->
 <template>
   <div class="tab-header">
@@ -47,7 +47,7 @@ export default {
       if (result.status == 200) {
         localStorage.removeItem("token");
         localStorage.removeItem("username");
-        // this.$router.replace("/");
+        this.$router.replace("/");
         location.reload();
       } else {
         this.$Message.error("退出失败！");

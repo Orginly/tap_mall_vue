@@ -1,3 +1,9 @@
+/*
+ * @Author: Orginly
+ * @Date: 2020-11-25 13:58:57
+ * @LastEditors: Orginly
+ * @LastEditTime: 2020-12-01 15:16:52
+ */
 const path = require('path');
 
 const resolve = dir => {
@@ -20,13 +26,22 @@ module.exports = {
     // 处理跨域请求
     proxy: {
       '/api': {
-        target: 'http://shop.io/',
+        target: 'http://mallapi.orginly.top/',
         ws: true,
         changeOrigin: true,
         pathRewrite: {
-          '^/api': ''
+          '^/api': '/api/'
         }
-      }
+      },
+      //代理图片地址
+      '/storage': {
+        target: 'http://mallapi.orginly.top/',
+        ws: true,
+        changeOrigin: true,
+        pathRewrite: {
+          '^/storage': '/storage/'
+        }
+      },
     }
   },
 };

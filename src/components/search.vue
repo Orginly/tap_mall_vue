@@ -2,7 +2,7 @@
  * @Author: Orginly
  * @Date: 2020-11-25 13:59:01
  * @LastEditors: Orginly
- * @LastEditTime: 2020-11-29 20:46:04
+ * @LastEditTime: 2020-12-01 16:19:16
 -->
 <template>
   <div class="top-search">
@@ -51,14 +51,14 @@ export default {
       cartNum: 0,
     };
   },
-  mounted() {
-    this.getCartCount();
-  },
+  mounted() {},
   methods: {
     async getCartCount() {
       let result = await cartCount();
       if (result.status == 200) {
         this.cartNum = result.data;
+      } else {
+        return;
       }
     },
   },

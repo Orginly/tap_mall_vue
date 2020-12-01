@@ -1,3 +1,9 @@
+/*
+ * @Author: Orginly
+ * @Date: 2020-11-25 13:59:01
+ * @LastEditors: Orginly
+ * @LastEditTime: 2020-12-01 16:18:02
+ */
 /**
  * axios拦截器
  */
@@ -29,6 +35,7 @@ axios.interceptors.response.use(
             case -1:
                 localStorage.removeItem("token");
                 localStorage.removeItem("username");
+                //跳转到首页
                 router.replace({
                     path: '/',
                 });

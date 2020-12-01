@@ -3,9 +3,9 @@
     <!-- 顶部tab -->
     <header_></header_>
     <!-- 搜索栏 -->
-    <search></search>
+    <search ref="search"></search>
     <!-- 首页导航栏 -->
-    <div class="top-nav bg3">
+    <div class="top-nav bg3" style="width: 100%">
       <div class="nav-box inner">
         <div class="all-cat">
           <div class="title"><i class="iconfont icon-menu"></i> 全部分类</div>
@@ -114,6 +114,7 @@ export default {
     };
   },
   mounted() {
+    this.$refs.search.getCartCount();
     this.$nextTick(function () {
       this.isShow = 1;
       setTimeout(function () {

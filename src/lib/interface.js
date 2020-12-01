@@ -2,7 +2,7 @@
  * @Author: Orginly
  * @Date: 2020-11-25 13:59:01
  * @LastEditors: Orginly
- * @LastEditTime: 2020-11-29 13:17:05
+ * @LastEditTime: 2020-12-01 15:15:07
  */
 /*
 接口请求函数模块
@@ -11,10 +11,9 @@
 import { post, get, put } from './http'
 
 //跨域请求服务器变更地址
-const url = process.env.NODE_ENV === 'production'
-    ? 'http://shop.io/' //这里是正式环境地址
-    //: '/api/'; //这里是本地代理地址，代理地址修改的文件在根目录下的vue.config.js文件中，将其中的域名更改为本地自己开发服务器API地址即可。
-    : 'http://shop.io/'
+const url = '/' //本地反向代理
+//const url = 'http://mallapi.orginly.top/'
+//const url = 'http://mall.orginly.top/'; //Nginx代理
 //发送验证码
 export const smscode = (data) => post(url + "api/sendcode", data);
 //登录

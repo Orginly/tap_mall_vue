@@ -412,7 +412,6 @@ export default {
       //更新购物车数据
       let countResult = await cartCount();
       if (countResult.status == 200) {
-        console.log("refs", this.$refs.search);
         this.$refs.search.cartNum = countResult.data;
       }
       this.$Message.success(result.msg);
